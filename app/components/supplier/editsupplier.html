@@ -1,0 +1,39 @@
+<div class="content">
+	<div class="box">
+		<ol class="breadcrumb">
+		  <li><a href="#/supplier">供应商管理</a></li>
+		  <li><a href="#/supplier">供应商列表</a></li>
+		  <li class="active">编辑供应商</li>
+		</ol>
+		<table class="table no_border" ng-init="loadSupplier()">
+			<tbody>
+				<tr>
+					<td>名称:</td>
+					<td><input type="text" ng-model="supplier.fullname"  class="form-control"/></td>
+				</tr>
+				<tr>
+					<td>简称:</td>
+					<td><input type="text" ng-model="supplier.name"  class="form-control"/></td>
+				</tr>
+				<tr>
+					<td>账号:</td>
+					<td><input type="text" ng-model="supplier.account"  class="form-control"/></td>
+				</tr>
+				<div ng-if="showpass">
+					<tr>
+						<td>密码:</td>
+						<td> <input type="password" ng-model="supplier.password"  class="form-control"/></td>
+					</tr>
+					<tr>
+						<td>确认密码:</td>
+						<td> <input type="password" ng-model="supplier.repassword"  class="form-control"/></td>
+					</tr>
+				</div>
+				<tr>
+					<td></td>
+					<td><a class="btn btn-success" ng-click="save()">&nbsp;&nbsp;&nbsp;&nbsp;保存&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

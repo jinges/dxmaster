@@ -1,0 +1,44 @@
+<div class="content">
+	<div class="box">
+		<ol class="breadcrumb">
+		  <li><a href="#/supplier">供应商管理</a></li>
+		  <li class="active">供应商列表</li>
+		</ol>
+
+		<table class="table table-bordered  table-hover" ng-init="loadSupplierList()">
+			<thead>
+				<tr>
+					<th>供应商编号</th>	
+					<th>名称</th>	
+					<th>门店数量</th>	
+					<th>创建时间</th>	
+					<th>状态</th>	
+					<th>操作</th>	
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in supplier">
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.storeCnt}}</td>
+					<td>{{item.createTime}}</td>
+					<td>{{item.status==1?'正常使用':'暂停使用'}}</td>
+					<td>
+						<a href="#/editsupplier/{{item.id}}">编辑</a>
+						<a href="javascript:;" ng-click="eidtState(item.id, item.status)">{{item.status==1?'停用':'启用'}}</a>
+						<a href="#/store/{{item.id}}">管理门店</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	<!-- 	<nav>
+		  	<ul class="pagination">
+				<li class="prev disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+				<li class="active"><a href="#">1</a></li>
+				<li ><a href="#">2</a></li>
+				<li ><a href="#">3</a></li>
+				<li class="next"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+		  	</ul>
+		</nav> -->
+	</div>
+</div>
